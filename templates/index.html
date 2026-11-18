@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Voting By Preference</title>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js"
+    ></script>
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🗳️
+            </div>
+
+            <div>
+
+                <h2>Voting By</h2>
+                <h2>Preference</h2>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#overview">
+                📊 Overview
+            </a>
+
+            <a href="#simulator">
+                ⚙️ Election Simulator
+            </a>
+
+            <a href="#analytics">
+                📈 Analytics
+            </a>
+
+            <a href="#methods">
+                🗳️ Voting Methods
+            </a>
+
+            <a href="#graph">
+                🔗 Preference Graph
+            </a>
+
+            <a href="#voters">
+                👥 Voter Data
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <p>
+                Discrete Mathematics
+            </p>
+
+            <p>
+                Election Analysis System
+            </p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div>
+
+                <p class="eyebrow">
+                    DISCRETE MATHEMATICS PROJECT
+                </p>
+
+                <h1>
+                    Voting By Preference
+                </h1>
+
+                <p class="subtitle">
+                    Compare multiple voting systems
+                    and analyze collective preferences.
+                </p>
+
+            </div>
+
+
+            <div class="header-badge">
+
+                <span class="status-dot"></span>
+
+                Election Active
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= ELECTION SIMULATOR ================= -->
+
+        <section id="simulator" class="simulator-section">
+
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">INTERACTIVE ELECTION LAB</p>
+                    <h2>Build Your Own Election</h2>
+                    <p>
+                        Choose the number of voters, enter their preferences,
+                        and compare the four voting methods.
+                    </p>
+                </div>
+            </div>
+
+            <div class="simulator-controls">
+                <label for="simVoterCount">Number of voters:</label>
+
+                <input
+                    id="simVoterCount"
+                    type="number"
+                    min="1"
+                    max="100"
+                    value="5"
+                >
+
+                <button
+                    type="button"
+                    id="generateVotersBtn"
+                    class="btn"
+                >
+                    Generate Voter Forms
+                </button>
+
+                <button
+                    type="button"
+                    id="sampleVotersBtn"
+                    class="btn"
+                >
+                    Generate Sample Ballots
+                </button>
+            </div>
+
+            <div id="simulatorVoters" class="simulator-voters"></div>
+
+            <div class="simulator-actions">
+                <button
+                    type="button"
+                    id="runSimulatorBtn"
+                    class="btn"
+                >
+                    Run Election →
+                </button>
+
+                <span id="simulatorStatus" role="status"></span>
+            </div>
+
+        </section>
+
+        <!-- ================= END ELECTION SIMULATOR ================= -->
+
+
+
+
+        <!-- ================= OVERVIEW ================= -->
+
+        <section id="overview">
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <p>Total Voters</p>
+
+                        <h2 id="voterCount">
+                            -
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <p>Candidates</p>
+
+                        <h2 id="candidateCount">
+                            -
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        🗳️
+                    </div>
+
+                    <div>
+
+                        <p>Voting Methods</p>
+
+                        <h2>4</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        🏆
+                    </div>
+
+                    <div>
+
+                        <p>Final Winner</p>
+
+                        <h2 id="winnerStat">
+                            -
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FINAL WINNER ================= -->
+
+        <section class="final-winner-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="eyebrow">
+                        FINAL DECISION
+                    </p>
+
+                    <h2>
+                        🏆 Final Election Winner
+                    </h2>
+
+                </div>
+
+                <p>
+                    Based on voting methods won
+                </p>
+
+            </div>
+
+
+            <div
+                id="finalWinnerCard"
+                class="final-winner-card"
+            >
+
+                Loading...
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ANALYTICS ================= -->
+
+        <section id="analytics">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="eyebrow">
+                        VISUAL ANALYSIS
+                    </p>
+
+                    <h2>
+                        Election Analytics
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="chart-grid">
+
+
+                <!-- VOTE SHARE -->
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <h3>
+                            First Preference Vote Share
+                        </h3>
+
+                        <p>
+                            FPTP vote distribution
+                        </p>
+
+                    </div>
+
+
+                    <div class="chart-wrapper">
+
+                        <canvas
+                            id="voteShareChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BORDA -->
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <h3>
+                            Borda Scores
+                        </h3>
+
+                        <p>
+                            Points based on ranking
+                        </p>
+
+                    </div>
+
+
+                    <div class="chart-wrapper">
+
+                        <canvas
+                            id="bordaChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+                <!-- APPROVAL -->
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <h3>
+                            Approval Voting
+                        </h3>
+
+                        <p>
+                            Candidate approval counts
+                        </p>
+
+                    </div>
+
+
+                    <div class="chart-wrapper">
+
+                        <canvas
+                            id="approvalChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RCV -->
+
+                <div class="chart-card wide">
+
+                    <div class="chart-header">
+
+                        <h3>
+                            RCV Round Progression
+                        </h3>
+
+                        <p>
+                            Vote transfers between rounds
+                        </p>
+
+                    </div>
+
+
+                    <div class="chart-wrapper">
+
+                        <canvas
+                            id="rcvChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+                <!-- METHOD COMPARISON -->
+
+                <div class="chart-card wide">
+
+                    <div class="chart-header">
+
+                        <h3>
+                            Voting Method Comparison
+                        </h3>
+
+                        <p>
+                            Candidate performance
+                            across methods
+                        </p>
+
+                    </div>
+
+
+                    <div class="chart-wrapper">
+
+                        <canvas
+                            id="methodComparisonChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FIRST PREFERENCE -->
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <h3>
+                            First Preference Ranking
+                        </h3>
+
+                        <p>
+                            First-choice votes
+                        </p>
+
+                    </div>
+
+
+                    <div class="chart-wrapper">
+
+                        <canvas
+                            id="rankingChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+                <!-- APPROVAL PIE -->
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <h3>
+                            Approval Distribution
+                        </h3>
+
+                        <p>
+                            Total approval share
+                        </p>
+
+                    </div>
+
+
+                    <div class="chart-wrapper">
+
+                        <canvas
+                            id="approvalPieChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= METHODS ================= -->
+
+        <section id="methods">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="eyebrow">
+                        RESULTS
+                    </p>
+
+                    <h2>
+                        Voting Method Results
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="methodPanels"
+                class="method-grid"
+            >
+
+                Loading...
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RCV ================= -->
+
+        <section>
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="eyebrow">
+                        INSTANT RUNOFF
+                    </p>
+
+                    <h2>
+                        RCV Rounds
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="rcvRounds"
+                class="rounds-container"
+            >
+
+                Loading...
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GRAPH ================= -->
+
+        <section id="graph">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="eyebrow">
+                        GRAPH THEORY
+                    </p>
+
+                    <h2>
+                        Preference Graph
+                    </h2>
+
+                </div>
+
+
+                <div id="cycleStatus"></div>
+
+            </div>
+
+
+            <div class="graph-card">
+
+                <svg
+                    id="preferenceGraph"
+                    viewBox="0 0 900 500"
+                ></svg>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MATRIX ================= -->
+
+        <section>
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="eyebrow">
+                        PAIRWISE ANALYSIS
+                    </p>
+
+                    <h2>
+                        Preference Matrix
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="matrixContainer"
+                class="matrix-container"
+            >
+
+                Loading...
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= VOTERS ================= -->
+
+        <section id="voters">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="eyebrow">
+                        INPUT DATA
+                    </p>
+
+                    <h2>
+                        Voter Preferences
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="votersContainer"
+                class="voters-container"
+            >
+
+                Loading...
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+     FUTURE ELECTION SCENARIO
+===================================================== -->
+
+<!-- =====================================================
+     HISTORICAL PATTERN ANALYSIS
+===================================================== -->
+
+<section id="future-scenario">
+
+    <div class="section-title">
+
+        <div>
+
+            <p class="eyebrow">
+                HISTORICAL PATTERN ANALYSIS
+            </p>
+
+            <h2>
+                📊 Saved Election History
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- ANALYSIS DESCRIPTION -->
+
+    <div class="scenario-warning">
+
+        <strong>
+            Historical Pattern Analysis
+        </strong>
+
+        <p>
+            The system analyses the winners from the
+            previous 15 voting rounds using the same
+            candidates. It calculates total wins,
+            recent performance, winning frequency and
+            consecutive winning patterns.
+        </p>
+
+    </div>
+
+
+    <!-- HISTORICAL SUMMARY -->
+
+    <div class="scenario-card">
+
+        <div class="historical-summary-grid">
+
+
+            <!-- HISTORICAL LEADER -->
+
+            <div class="historical-highlight">
+
+                <p class="eyebrow">
+                    MOST FREQUENT HISTORICAL WINNER
+                </p>
+
+                <h3
+                    id="historicalLeader"
+                >
+                    —
+                </h3>
+
+                <p
+                    id="historicalLeaderDescription"
+                >
+                    Loading historical analysis...
+                </p>
+
+            </div>
+
+
+            <!-- SAVED ELECTIONS -->
+
+            <div class="historical-stat">
+
+                <span>
+                    SAVED ELECTIONS
+                </span>
+
+                <strong
+                    id="historicalRounds"
+                >
+                    15
+                </strong>
+
+            </div>
+
+
+            <!-- RECENT WINNER -->
+
+            <div class="historical-stat">
+
+                <span>
+                    MOST RECENT WINNER
+                </span>
+
+                <strong
+                    id="latestWinner"
+                >
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- CURRENT STREAK -->
+
+            <div class="historical-stat">
+
+                <span>
+                    CURRENT STREAK
+                </span>
+
+                <strong
+                    id="currentStreak"
+                >
+                    —
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- CHART -->
+
+    <div class="scenario-card">
+
+        <div class="scenario-result-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    WINNER FREQUENCY
+                </p>
+
+                <h3>
+                    Historical wins by candidate
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="scenario-chart-wrapper">
+
+            <canvas
+                id="historicalWinChart"
+            ></canvas>
+
+        </div>
+
+    </div>
+
+
+    <!-- YEAR-BY-YEAR CHART -->
+
+    <div class="scenario-card">
+
+        <div class="scenario-result-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    SAVED RUN TIMELINE
+                </p>
+
+                <h3>
+                    Winner pattern across years
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="scenario-chart-wrapper">
+
+            <canvas
+                id="historicalTimelineChart"
+            ></canvas>
+
+        </div>
+
+    </div>
+
+
+    <!-- WIN COUNT CARDS -->
+
+    <div
+        id="historicalWinCards"
+        class="historical-win-cards"
+    ></div>
+
+
+    <!-- HISTORY TABLE -->
+
+    <div class="scenario-card">
+
+        <div class="scenario-result-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    ROUND-BY-ROUND RECORD
+                </p>
+
+                <h3>
+                    Saved simulator election results
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            YEAR
+                        </th>
+
+                        <th>
+                            WINNER
+                        </th>
+
+                        <th>
+                            METHOD
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="historicalTableBody"
+                >
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- PATTERN ANALYSIS -->
+
+    <div class="scenario-card">
+
+        <div class="scenario-result-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    PATTERN ANALYSIS
+                </p>
+
+                <h3>
+                    Observed historical pattern
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="patternAnalysis"
+            class="pattern-analysis"
+        >
+
+            Loading pattern analysis...
+
+        </div>
+
+    </div>
+
+
+    <div class="scenario-note">
+
+        <strong>
+            Academic note:
+        </strong>
+
+        These statistics are calculated from saved simulator runs only.
+        They describe observed results and are not a guarantee of a future winner.
+
+    </div>
+
+</section>
+        <footer>
+
+            <span>
+                Voting By Preference
+            </span>
+
+            <span>
+                Discrete Mathematics Project
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='app.js') }}"
+></script>
+
+</body>
+
+</html>
