@@ -1,0 +1,880 @@
+[
+  {
+    "run_id": 1,
+    "timestamp": "2026-10-20T08:11:36.865881+00:00",
+    "candidates": [
+      {
+        "id": 0,
+        "name": "Kshiteej"
+      },
+      {
+        "id": 1,
+        "name": "Pranit"
+      },
+      {
+        "id": 2,
+        "name": "Neel"
+      },
+      {
+        "id": 3,
+        "name": "Spurthi"
+      }
+    ],
+    "voters": [
+      {
+        "id": 1,
+        "ranking": [
+          2,
+          3,
+          1,
+          0
+        ],
+        "approvals": [
+          1
+        ]
+      },
+      {
+        "id": 2,
+        "ranking": [
+          0,
+          2,
+          3,
+          1
+        ],
+        "approvals": [
+          0,
+          1,
+          3
+        ]
+      },
+      {
+        "id": 3,
+        "ranking": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "approvals": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": 4,
+        "ranking": [
+          0,
+          3,
+          1,
+          2
+        ],
+        "approvals": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": 5,
+        "ranking": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "approvals": [
+          1,
+          2
+        ]
+      }
+    ],
+    "results": [
+      {
+        "method": "FPTP",
+        "winners": [
+          0,
+          1
+        ],
+        "tally": {
+          "0": 2,
+          "1": 2,
+          "2": 1,
+          "3": 0
+        },
+        "rounds": []
+      },
+      {
+        "method": "RCV",
+        "winners": [
+          1
+        ],
+        "tally": {
+          "0": 2,
+          "1": 3
+        },
+        "rounds": [
+          {
+            "0": 2,
+            "1": 2,
+            "2": 1,
+            "3": 0
+          },
+          {
+            "0": 2,
+            "1": 2,
+            "2": 1
+          },
+          {
+            "0": 2,
+            "1": 3
+          }
+        ]
+      },
+      {
+        "method": "Approval",
+        "winners": [
+          1
+        ],
+        "tally": {
+          "0": 2,
+          "1": 4,
+          "2": 3,
+          "3": 3
+        },
+        "rounds": []
+      },
+      {
+        "method": "Borda",
+        "winners": [
+          3
+        ],
+        "tally": {
+          "0": 6,
+          "1": 8,
+          "2": 7,
+          "3": 9
+        },
+        "rounds": []
+      }
+    ],
+    "final_winner": {
+      "winner_ids": [
+        1
+      ],
+      "method_wins": {
+        "0": 1,
+        "1": 3,
+        "2": 0,
+        "3": 1
+      },
+      "total_methods": 4
+    },
+    "winner_ids": [
+      1
+    ],
+    "winners": [
+      "Pranit"
+    ],
+    "condorcet": 3,
+    "cycle_detected": false
+  },
+  {
+    "run_id": 2,
+    "timestamp": "2026-10-20T08:12:45.230879+00:00",
+    "candidates": [
+      {
+        "id": 0,
+        "name": "Kshiteej"
+      },
+      {
+        "id": 1,
+        "name": "Pranit"
+      },
+      {
+        "id": 2,
+        "name": "Neel"
+      },
+      {
+        "id": 3,
+        "name": "Spurthi"
+      }
+    ],
+    "voters": [
+      {
+        "id": 1,
+        "ranking": [
+          2,
+          0,
+          1,
+          3
+        ],
+        "approvals": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": 2,
+        "ranking": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "approvals": [
+          0,
+          2
+        ]
+      },
+      {
+        "id": 3,
+        "ranking": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "approvals": [
+          3
+        ]
+      },
+      {
+        "id": 4,
+        "ranking": [
+          1,
+          3,
+          0,
+          2
+        ],
+        "approvals": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": 5,
+        "ranking": [
+          3,
+          0,
+          2,
+          1
+        ],
+        "approvals": []
+      },
+      {
+        "id": 6,
+        "ranking": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "approvals": [
+          0,
+          2
+        ]
+      },
+      {
+        "id": 7,
+        "ranking": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "approvals": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": 8,
+        "ranking": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "approvals": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "id": 9,
+        "ranking": [
+          0,
+          3,
+          2,
+          1
+        ],
+        "approvals": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": 10,
+        "ranking": [
+          2,
+          3,
+          1,
+          0
+        ],
+        "approvals": [
+          0,
+          2
+        ]
+      },
+      {
+        "id": 11,
+        "ranking": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "approvals": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "id": 12,
+        "ranking": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "approvals": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": 13,
+        "ranking": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "approvals": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "id": 14,
+        "ranking": [
+          0,
+          3,
+          1,
+          2
+        ],
+        "approvals": [
+          0,
+          3
+        ]
+      },
+      {
+        "id": 15,
+        "ranking": [
+          0,
+          2,
+          1,
+          3
+        ],
+        "approvals": [
+          0,
+          3
+        ]
+      },
+      {
+        "id": 16,
+        "ranking": [
+          1,
+          3,
+          0,
+          2
+        ],
+        "approvals": [
+          1
+        ]
+      },
+      {
+        "id": 17,
+        "ranking": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "approvals": [
+          0
+        ]
+      },
+      {
+        "id": 18,
+        "ranking": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "approvals": [
+          1
+        ]
+      },
+      {
+        "id": 19,
+        "ranking": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "approvals": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": 20,
+        "ranking": [
+          0,
+          3,
+          2,
+          1
+        ],
+        "approvals": [
+          2,
+          3
+        ]
+      }
+    ],
+    "results": [
+      {
+        "method": "FPTP",
+        "winners": [
+          0
+        ],
+        "tally": {
+          "0": 6,
+          "1": 4,
+          "2": 5,
+          "3": 5
+        },
+        "rounds": []
+      },
+      {
+        "method": "RCV",
+        "winners": [
+          3
+        ],
+        "tally": {
+          "3": 20
+        },
+        "rounds": [
+          {
+            "0": 6,
+            "1": 4,
+            "2": 5,
+            "3": 5
+          },
+          {
+            "0": 8,
+            "2": 5,
+            "3": 7
+          },
+          {
+            "0": 10,
+            "3": 10
+          },
+          {
+            "3": 20
+          }
+        ]
+      },
+      {
+        "method": "Approval",
+        "winners": [
+          2
+        ],
+        "tally": {
+          "0": 10,
+          "1": 10,
+          "2": 13,
+          "3": 9
+        },
+        "rounds": []
+      },
+      {
+        "method": "Borda",
+        "winners": [
+          0
+        ],
+        "tally": {
+          "0": 36,
+          "1": 28,
+          "2": 22,
+          "3": 34
+        },
+        "rounds": []
+      }
+    ],
+    "final_winner": {
+      "winner_ids": [
+        0
+      ],
+      "method_wins": {
+        "0": 2,
+        "1": 0,
+        "2": 1,
+        "3": 1
+      },
+      "total_methods": 4
+    },
+    "winner_ids": [
+      0
+    ],
+    "winners": [
+      "Kshiteej"
+    ],
+    "condorcet": null,
+    "cycle_detected": false
+  },
+  {
+    "run_id": 3,
+    "timestamp": "2026-11-18T13:00:23.074525+00:00",
+    "candidates": [
+      {
+        "id": 0,
+        "name": "Kshiteej"
+      },
+      {
+        "id": 1,
+        "name": "Pranit"
+      },
+      {
+        "id": 2,
+        "name": "Neel"
+      },
+      {
+        "id": 3,
+        "name": "Spurthi"
+      }
+    ],
+    "voters": [
+      {
+        "id": 1,
+        "ranking": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "approvals": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": 2,
+        "ranking": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "approvals": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": 3,
+        "ranking": [
+          3,
+          2,
+          0,
+          1
+        ],
+        "approvals": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": 4,
+        "ranking": [
+          3,
+          0,
+          2,
+          1
+        ],
+        "approvals": []
+      },
+      {
+        "id": 5,
+        "ranking": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "approvals": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": 6,
+        "ranking": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "approvals": [
+          2
+        ]
+      },
+      {
+        "id": 7,
+        "ranking": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "approvals": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": 8,
+        "ranking": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "approvals": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": 9,
+        "ranking": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "approvals": [
+          3
+        ]
+      },
+      {
+        "id": 10,
+        "ranking": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "approvals": [
+          0
+        ]
+      },
+      {
+        "id": 11,
+        "ranking": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "approvals": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": 12,
+        "ranking": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "approvals": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": 13,
+        "ranking": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "approvals": [
+          0,
+          3
+        ]
+      },
+      {
+        "id": 14,
+        "ranking": [
+          3,
+          0,
+          2,
+          1
+        ],
+        "approvals": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": 15,
+        "ranking": [
+          1,
+          3,
+          0,
+          2
+        ],
+        "approvals": [
+          1,
+          3
+        ]
+      },
+      {
+        "id": 16,
+        "ranking": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "approvals": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "results": [
+      {
+        "method": "FPTP",
+        "winners": [
+          3
+        ],
+        "tally": {
+          "0": 4,
+          "1": 3,
+          "2": 3,
+          "3": 6
+        },
+        "rounds": []
+      },
+      {
+        "method": "RCV",
+        "winners": [
+          3
+        ],
+        "tally": {
+          "3": 16
+        },
+        "rounds": [
+          {
+            "0": 4,
+            "1": 3,
+            "2": 3,
+            "3": 6
+          },
+          {
+            "0": 6,
+            "2": 3,
+            "3": 7
+          },
+          {
+            "0": 8,
+            "3": 8
+          },
+          {
+            "3": 16
+          }
+        ]
+      },
+      {
+        "method": "Approval",
+        "winners": [
+          3
+        ],
+        "tally": {
+          "0": 5,
+          "1": 10,
+          "2": 8,
+          "3": 11
+        },
+        "rounds": []
+      },
+      {
+        "method": "Borda",
+        "winners": [
+          0
+        ],
+        "tally": {
+          "0": 31,
+          "1": 21,
+          "2": 16,
+          "3": 28
+        },
+        "rounds": []
+      }
+    ],
+    "final_winner": {
+      "winner_ids": [
+        3
+      ],
+      "method_wins": {
+        "0": 1,
+        "1": 0,
+        "2": 0,
+        "3": 3
+      },
+      "total_methods": 4
+    },
+    "winner_ids": [
+      3
+    ],
+    "winners": [
+      "Spurthi"
+    ],
+    "condorcet": null,
+    "cycle_detected": false
+  }
+]
